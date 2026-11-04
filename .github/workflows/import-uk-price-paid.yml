@@ -1,8 +1,13 @@
 name: Refresh UK Price Paid Data
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build-market-data.py'
+      - '.github/workflows/import-uk-price-paid.yml'
   schedule:
-    - cron: "25 7 25 * *"
+    - cron: '25 7 25 * *'
 permissions:
   contents: write
 concurrency:
@@ -11,23 +16,38 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
-      - name: Download official annual datasets
+        with:
+          persist-credentials: true
+      - name: Download official corrected annual datasets
         run: |
           set -euo pipefail
-          curl --fail --location --retry 3 --max-time 900 -o /tmp/pp-2025.csv https://price-paid-data.publicdata.landregistry.gov.uk/pp-2025.csv
-          curl --fail --location --retry 3 --max-time 900 -o /tmp/pp-2026.csv https://price-paid-data.publicdata.landregistry.gov.uk/pp-2026.csv
-      - name: Validate and aggregate
+          for year in 2024 2025 2026; do
+            curl --fail --location --retry 3 --max-time 1200 --output "/tmp/pp-${year}.csv" "https://price-paid-data.publicdata.landregistry.gov.uk/pp-${year}.csv"
+            test "$(wc -c < "/tmp/pp-${year}.csv")" -gt 1000000
+          done
+      - name: Validate and aggregate six markets
         run: |
-          python scripts/build-market-data.py --csv /tmp/pp-2025.csv /tmp/pp-2026.csv --source-url https://www.gov.uk/government/statistical-data-sets/price-paid-data-downloads
-      - name: Commit updated data
+          python scripts/build-market-data.py --csv /tmp/pp-2024.csv /tmp/pp-2025.csv /tmp/pp-2026.csv --source-url https://www.gov.uk/government/statistical-data-sets/price-paid-data-yearly-file
+      - name: Check required city coverage
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open("data/market-snapshot.json"))
+          expected={"london","manchester","birmingham","liverpool","leeds","bristol"}
+          assert set(d["cities"])==expected
+          assert all(len(c["byYear"])>=2 for c in d["cities"].values())
+          assert all(len(c["byQuarter"])>=4 for c in d["cities"].values())
+          print("Validated all six city markets and time series")
+          PY
+      - name: Commit verified statistics
         run: |
           git config user.name "aierra-data-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/market-snapshot.json
           if ! git diff --cached --quiet; then
-            git commit -m "Refresh official UK transaction data"
+            git commit -m "Update verified HM Land Registry city statistics"
             git push
           fi

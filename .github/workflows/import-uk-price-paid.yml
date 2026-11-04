@@ -1,45 +1,33 @@
-name: Import UK Price Paid Data
+name: Refresh UK Price Paid Data
 on:
   workflow_dispatch:
-    inputs:
-      csv_url:
-        description: "Verified official HM Land Registry yearly CSV HTTPS URL"
-        required: true
-        type: string
+  schedule:
+    - cron: "25 7 25 * *"
 permissions:
   contents: write
+concurrency:
+  group: uk-price-paid-refresh
+  cancel-in-progress: false
 jobs:
-  import:
+  refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
-        with:
-          persist-credentials: true
-      - name: Validate official source URL
-        env:
-          CSV_URL: ${{ inputs.csv_url }}
+      - name: Download official annual datasets
         run: |
-          python - <<'PY'
-          import os,urllib.parse
-          u=urllib.parse.urlparse(os.environ["CSV_URL"])
-          if u.scheme!="https" or u.hostname!="publicdata.landregistry.gov.uk" or not u.path.lower().endswith(".csv"):
-              raise SystemExit("Only official publicdata.landregistry.gov.uk CSV URLs are allowed")
-          PY
-      - name: Download official data
-        env:
-          CSV_URL: ${{ inputs.csv_url }}
-        run: curl --fail --location --retry 3 --max-time 900 --output /tmp/price-paid.csv "$CSV_URL"
-      - name: Build validated aggregates
-        env:
-          CSV_URL: ${{ inputs.csv_url }}
-        run: python scripts/build-market-data.py --csv /tmp/price-paid.csv --source-url "$CSV_URL"
-      - name: Commit only if data changed
+          set -euo pipefail
+          curl --fail --location --retry 3 --max-time 900 -o /tmp/pp-2025.csv https://price-paid-data.publicdata.landregistry.gov.uk/pp-2025.csv
+          curl --fail --location --retry 3 --max-time 900 -o /tmp/pp-2026.csv https://price-paid-data.publicdata.landregistry.gov.uk/pp-2026.csv
+      - name: Validate and aggregate
+        run: |
+          python scripts/build-market-data.py --csv /tmp/pp-2025.csv /tmp/pp-2026.csv --source-url https://www.gov.uk/government/statistical-data-sets/price-paid-data-downloads
+      - name: Commit updated data
         run: |
           git config user.name "aierra-data-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/market-snapshot.json
           if ! git diff --cached --quiet; then
-            git commit -m "Update UK official price paid aggregates"
+            git commit -m "Refresh official UK transaction data"
             git push
           fi

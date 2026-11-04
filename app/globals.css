@@ -42,3 +42,24 @@ body{background:#0b0c0d;color:#f7f7f5;font-family:Arial,Helvetica,sans-serif}a{c
 @media(min-width:900px){.aj-hero{position:relative;padding-top:0}.aj-hero-image{height:470px}.aj-hero-text{max-width:850px;padding-top:40px}.aj-city-card .aj-photo{height:230px}}
 
 .aj-article{max-width:1000px;padding-top:55px;padding-bottom:120px}.aj-article>a:first-child{font-size:13px;color:#47637a}.aj-article .aj-kicker{margin-top:85px}.aj-article h1{font:700 clamp(42px,6vw,76px)/1.08 Georgia,serif;letter-spacing:-.05em;margin:12px 0 26px}.aj-article-deck{font-size:clamp(20px,2.5vw,28px);line-height:1.5;color:#5e6b75;max-width:800px}.aj-article-meta{font-size:12px;color:#687985;padding:22px 0;border-top:1px solid #d7dfe4;margin-top:32px}.aj-article figure{margin:10px 0 60px}.aj-article figure img{width:100%;height:420px;object-fit:cover;border-radius:12px}.aj-article figcaption{font-size:12px;color:#77838b;margin-top:12px}.aj-article-body{max-width:750px;margin:auto}.aj-article-body h2{font:700 32px/1.2 Georgia,serif;letter-spacing:-.02em;margin:48px 0 17px}.aj-article-body>p{font:18px/1.9 Georgia,serif;color:#34434d}.aj-article-source{background:#edf2f4;padding:28px;margin:50px 0 28px;border-left:3px solid #1b6897}.aj-article-source p{font-size:14px;line-height:1.7;color:#4e606d}.aj-article-source a{text-decoration:underline}.aj-article-link{display:inline-block;padding:17px 22px;background:#173d57;color:#fff;border-radius:6px}.aj-market-search{display:flex;gap:10px;margin:0 0 35px}.aj-market-search input{flex:1;min-width:0;padding:17px;border:1px solid #ccd4d9;border-radius:8px;font-size:16px;background:white}.aj-market-search button{background:#153d59;color:white;border:0;padding:0 28px;border-radius:8px;cursor:pointer}.market-page .city-grid{grid-template-columns:repeat(3,1fr)}@media(max-width:700px){.market-page .city-grid{grid-template-columns:1fr 1fr}.aj-article figure img{height:260px}.aj-article .aj-kicker{margin-top:50px}.aj-article-body>p{font-size:17px}}@media(max-width:480px){.market-page .city-grid{grid-template-columns:1fr}.aj-market-search button{padding:0 15px}}
+
+/* Explicit editorial reset: avoid default browser underlines and excessive mobile sizing */
+.aj-site a{text-decoration:none!important}
+.aj-site a:hover{text-decoration:none}
+.aj-logo-name,.aj-logo-caption{border:0!important;text-decoration:none!important}
+.aj-header nav a{font-weight:500;text-decoration:none!important}
+.aj-logo-name{line-height:1.15;letter-spacing:-.055em}
+.aj-logo-name:after{width:48px;height:4px;top:52%;left:2px;pointer-events:none}
+.aj-hero-image{box-shadow:none}
+@media(max-width:560px){
+ .aj-container{padding-left:20px;padding-right:20px}
+ .aj-header{padding-top:18px;padding-bottom:20px}
+ .aj-logo-name{font-size:33px}
+ .aj-logo-caption{font-size:8px;letter-spacing:.18em}
+ .aj-hero-image{height:240px;border-radius:12px}
+ .aj-hero h1{font-size:clamp(37px,10.2vw,45px);line-height:1.1;letter-spacing:-.045em}
+ .aj-hero-text{padding-top:24px}
+ .aj-kicker{font-size:10px;letter-spacing:.1em}
+ .aj-subtitle{font-size:18px;line-height:1.45}
+ .aj-header nav{font-size:13px}
+}

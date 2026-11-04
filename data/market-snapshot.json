@@ -1,1 +1,724 @@
-{"source":"HM Land Registry Price Paid Data","sourceUrl":"https://www.gov.uk/government/statistical-data-sets/price-paid-data-downloads","updatedAt":"","coverageStart":"","coverageEnd":"","scope":"England and Wales; standard category A; residential property types D/S/T/F; excludes additional category B","cities":{}}
+{
+  "source": "HM Land Registry Price Paid Data",
+  "sourceUrl": "https://www.gov.uk/government/statistical-data-sets/price-paid-data-yearly-file",
+  "updatedAt": "2026-11-04T16:15:27.073004+00:00",
+  "coverageStart": "2024-01-01",
+  "coverageEnd": "2026-09-30",
+  "scope": "England and Wales; standard category A; property types D/S/T/F; administrative districts; nominal, unadjusted prices",
+  "cities": {
+    "london": {
+      "transactions": 210848,
+      "medianPrice": 528000,
+      "meanPrice": 701961,
+      "byYear": [
+        {
+          "year": "2024",
+          "transactions": 83979,
+          "medianPrice": 530000,
+          "meanPrice": 721305
+        },
+        {
+          "year": "2025",
+          "transactions": 87088,
+          "medianPrice": 530000,
+          "meanPrice": 703531
+        },
+        {
+          "year": "2026",
+          "transactions": 39781,
+          "medianPrice": 515000,
+          "meanPrice": 657690
+        }
+      ],
+      "byQuarter": [
+        {
+          "quarter": "2024 Q1",
+          "transactions": 17201,
+          "medianPrice": 519900,
+          "meanPrice": 717043
+        },
+        {
+          "quarter": "2024 Q2",
+          "transactions": 19383,
+          "medianPrice": 530000,
+          "meanPrice": 727371
+        },
+        {
+          "quarter": "2024 Q3",
+          "transactions": 23966,
+          "medianPrice": 550000,
+          "meanPrice": 732495
+        },
+        {
+          "quarter": "2024 Q4",
+          "transactions": 23429,
+          "medianPrice": 530000,
+          "meanPrice": 707967
+        },
+        {
+          "quarter": "2025 Q1",
+          "transactions": 30292,
+          "medianPrice": 521000,
+          "meanPrice": 665808
+        },
+        {
+          "quarter": "2025 Q2",
+          "transactions": 13940,
+          "medianPrice": 540000,
+          "meanPrice": 743686
+        },
+        {
+          "quarter": "2025 Q3",
+          "transactions": 22208,
+          "medianPrice": 550000,
+          "meanPrice": 743633
+        },
+        {
+          "quarter": "2025 Q4",
+          "transactions": 20648,
+          "medianPrice": 523000,
+          "meanPrice": 688631
+        },
+        {
+          "quarter": "2026 Q1",
+          "transactions": 15511,
+          "medianPrice": 511000,
+          "meanPrice": 659865
+        },
+        {
+          "quarter": "2026 Q2",
+          "transactions": 13520,
+          "medianPrice": 515000,
+          "meanPrice": 665719
+        },
+        {
+          "quarter": "2026 Q3",
+          "transactions": 10750,
+          "medianPrice": 520000,
+          "meanPrice": 644454
+        }
+      ],
+      "byType": [
+        {
+          "type": "Detached",
+          "transactions": 10066,
+          "medianPrice": 900000,
+          "meanPrice": 1274840
+        },
+        {
+          "type": "Flat/maisonette",
+          "transactions": 109652,
+          "medianPrice": 442500,
+          "meanPrice": 568097
+        },
+        {
+          "type": "Semi-detached",
+          "transactions": 32503,
+          "medianPrice": 625000,
+          "meanPrice": 794100
+        },
+        {
+          "type": "Terraced",
+          "transactions": 58627,
+          "medianPrice": 590000,
+          "meanPrice": 802889
+        }
+      ]
+    },
+    "manchester": {
+      "transactions": 12538,
+      "medianPrice": 255000,
+      "meanPrice": 291131,
+      "byYear": [
+        {
+          "year": "2024",
+          "transactions": 4995,
+          "medianPrice": 255000,
+          "meanPrice": 285902
+        },
+        {
+          "year": "2025",
+          "transactions": 5010,
+          "medianPrice": 255500,
+          "meanPrice": 294881
+        },
+        {
+          "year": "2026",
+          "transactions": 2533,
+          "medianPrice": 255000,
+          "meanPrice": 294029
+        }
+      ],
+      "byQuarter": [
+        {
+          "quarter": "2024 Q1",
+          "transactions": 1046,
+          "medianPrice": 235000,
+          "meanPrice": 263946
+        },
+        {
+          "quarter": "2024 Q2",
+          "transactions": 1420,
+          "medianPrice": 280000,
+          "meanPrice": 302827
+        },
+        {
+          "quarter": "2024 Q3",
+          "transactions": 1274,
+          "medianPrice": 250000,
+          "meanPrice": 283369
+        },
+        {
+          "quarter": "2024 Q4",
+          "transactions": 1255,
+          "medianPrice": 246000,
+          "meanPrice": 287621
+        },
+        {
+          "quarter": "2025 Q1",
+          "transactions": 1415,
+          "medianPrice": 252000,
+          "meanPrice": 292611
+        },
+        {
+          "quarter": "2025 Q2",
+          "transactions": 946,
+          "medianPrice": 238000,
+          "meanPrice": 271300
+        },
+        {
+          "quarter": "2025 Q3",
+          "transactions": 1320,
+          "medianPrice": 256000,
+          "meanPrice": 298555
+        },
+        {
+          "quarter": "2025 Q4",
+          "transactions": 1329,
+          "medianPrice": 271500,
+          "meanPrice": 310432
+        },
+        {
+          "quarter": "2026 Q1",
+          "transactions": 1008,
+          "medianPrice": 256000,
+          "meanPrice": 293391
+        },
+        {
+          "quarter": "2026 Q2",
+          "transactions": 846,
+          "medianPrice": 250000,
+          "meanPrice": 284681
+        },
+        {
+          "quarter": "2026 Q3",
+          "transactions": 679,
+          "medianPrice": 260000,
+          "meanPrice": 306622
+        }
+      ],
+      "byType": [
+        {
+          "type": "Detached",
+          "transactions": 505,
+          "medianPrice": 400000,
+          "meanPrice": 495022
+        },
+        {
+          "type": "Flat/maisonette",
+          "transactions": 4987,
+          "medianPrice": 228000,
+          "meanPrice": 250155
+        },
+        {
+          "type": "Semi-detached",
+          "transactions": 3475,
+          "medianPrice": 300000,
+          "meanPrice": 340872
+        },
+        {
+          "type": "Terraced",
+          "transactions": 3571,
+          "medianPrice": 241000,
+          "meanPrice": 271119
+        }
+      ]
+    },
+    "birmingham": {
+      "transactions": 24391,
+      "medianPrice": 236000,
+      "meanPrice": 273178,
+      "byYear": [
+        {
+          "year": "2024",
+          "transactions": 9484,
+          "medianPrice": 230000,
+          "meanPrice": 268219
+        },
+        {
+          "year": "2025",
+          "transactions": 10118,
+          "medianPrice": 240000,
+          "meanPrice": 275282
+        },
+        {
+          "year": "2026",
+          "transactions": 4789,
+          "medianPrice": 240000,
+          "meanPrice": 278554
+        }
+      ],
+      "byQuarter": [
+        {
+          "quarter": "2024 Q1",
+          "transactions": 1992,
+          "medianPrice": 222000,
+          "meanPrice": 256415
+        },
+        {
+          "quarter": "2024 Q2",
+          "transactions": 2177,
+          "medianPrice": 230000,
+          "meanPrice": 268093
+        },
+        {
+          "quarter": "2024 Q3",
+          "transactions": 2555,
+          "medianPrice": 235000,
+          "meanPrice": 271788
+        },
+        {
+          "quarter": "2024 Q4",
+          "transactions": 2760,
+          "medianPrice": 235000,
+          "meanPrice": 273532
+        },
+        {
+          "quarter": "2025 Q1",
+          "transactions": 3162,
+          "medianPrice": 245000,
+          "meanPrice": 280578
+        },
+        {
+          "quarter": "2025 Q2",
+          "transactions": 1894,
+          "medianPrice": 230000,
+          "meanPrice": 259637
+        },
+        {
+          "quarter": "2025 Q3",
+          "transactions": 2575,
+          "medianPrice": 240000,
+          "meanPrice": 276824
+        },
+        {
+          "quarter": "2025 Q4",
+          "transactions": 2487,
+          "medianPrice": 240000,
+          "meanPrice": 278868
+        },
+        {
+          "quarter": "2026 Q1",
+          "transactions": 1926,
+          "medianPrice": 240000,
+          "meanPrice": 281218
+        },
+        {
+          "quarter": "2026 Q2",
+          "transactions": 1575,
+          "medianPrice": 240000,
+          "meanPrice": 273485
+        },
+        {
+          "quarter": "2026 Q3",
+          "transactions": 1288,
+          "medianPrice": 245000,
+          "meanPrice": 280767
+        }
+      ],
+      "byType": [
+        {
+          "type": "Detached",
+          "transactions": 2736,
+          "medianPrice": 450000,
+          "meanPrice": 516897
+        },
+        {
+          "type": "Flat/maisonette",
+          "transactions": 4517,
+          "medianPrice": 155000,
+          "meanPrice": 175697
+        },
+        {
+          "type": "Semi-detached",
+          "transactions": 8686,
+          "medianPrice": 261000,
+          "meanPrice": 286690
+        },
+        {
+          "type": "Terraced",
+          "transactions": 8452,
+          "medianPrice": 215000,
+          "meanPrice": 232494
+        }
+      ]
+    },
+    "liverpool": {
+      "transactions": 12164,
+      "medianPrice": 180000,
+      "meanPrice": 216445,
+      "byYear": [
+        {
+          "year": "2024",
+          "transactions": 4835,
+          "medianPrice": 170000,
+          "meanPrice": 203042
+        },
+        {
+          "year": "2025",
+          "transactions": 4891,
+          "medianPrice": 183000,
+          "meanPrice": 224553
+        },
+        {
+          "year": "2026",
+          "transactions": 2438,
+          "medianPrice": 190500,
+          "meanPrice": 226761
+        }
+      ],
+      "byQuarter": [
+        {
+          "quarter": "2024 Q1",
+          "transactions": 1019,
+          "medianPrice": 160000,
+          "meanPrice": 189931
+        },
+        {
+          "quarter": "2024 Q2",
+          "transactions": 1214,
+          "medianPrice": 167000,
+          "meanPrice": 195253
+        },
+        {
+          "quarter": "2024 Q3",
+          "transactions": 1260,
+          "medianPrice": 175000,
+          "meanPrice": 214581
+        },
+        {
+          "quarter": "2024 Q4",
+          "transactions": 1342,
+          "medianPrice": 180000,
+          "meanPrice": 209208
+        },
+        {
+          "quarter": "2025 Q1",
+          "transactions": 1474,
+          "medianPrice": 185000,
+          "meanPrice": 224073
+        },
+        {
+          "quarter": "2025 Q2",
+          "transactions": 969,
+          "medianPrice": 175000,
+          "meanPrice": 204741
+        },
+        {
+          "quarter": "2025 Q3",
+          "transactions": 1223,
+          "medianPrice": 185000,
+          "meanPrice": 226275
+        },
+        {
+          "quarter": "2025 Q4",
+          "transactions": 1225,
+          "medianPrice": 190000,
+          "meanPrice": 239083
+        },
+        {
+          "quarter": "2026 Q1",
+          "transactions": 931,
+          "medianPrice": 185000,
+          "meanPrice": 220661
+        },
+        {
+          "quarter": "2026 Q2",
+          "transactions": 851,
+          "medianPrice": 197000,
+          "meanPrice": 230772
+        },
+        {
+          "quarter": "2026 Q3",
+          "transactions": 656,
+          "medianPrice": 191000,
+          "meanPrice": 230215
+        }
+      ],
+      "byType": [
+        {
+          "type": "Detached",
+          "transactions": 917,
+          "medianPrice": 350000,
+          "meanPrice": 427091
+        },
+        {
+          "type": "Flat/maisonette",
+          "transactions": 2636,
+          "medianPrice": 147700,
+          "meanPrice": 159853
+        },
+        {
+          "type": "Semi-detached",
+          "transactions": 3381,
+          "medianPrice": 235000,
+          "meanPrice": 265940
+        },
+        {
+          "type": "Terraced",
+          "transactions": 5230,
+          "medianPrice": 155000,
+          "meanPrice": 176038
+        }
+      ]
+    },
+    "leeds": {
+      "transactions": 25768,
+      "medianPrice": 245000,
+      "meanPrice": 286638,
+      "byYear": [
+        {
+          "year": "2024",
+          "transactions": 10101,
+          "medianPrice": 240000,
+          "meanPrice": 283126
+        },
+        {
+          "year": "2025",
+          "transactions": 10475,
+          "medianPrice": 250000,
+          "meanPrice": 290347
+        },
+        {
+          "year": "2026",
+          "transactions": 5192,
+          "medianPrice": 245000,
+          "meanPrice": 285988
+        }
+      ],
+      "byQuarter": [
+        {
+          "quarter": "2024 Q1",
+          "transactions": 2070,
+          "medianPrice": 229998,
+          "meanPrice": 271363
+        },
+        {
+          "quarter": "2024 Q2",
+          "transactions": 2482,
+          "medianPrice": 240000,
+          "meanPrice": 278016
+        },
+        {
+          "quarter": "2024 Q3",
+          "transactions": 2622,
+          "medianPrice": 244998,
+          "meanPrice": 290397
+        },
+        {
+          "quarter": "2024 Q4",
+          "transactions": 2927,
+          "medianPrice": 250000,
+          "meanPrice": 289264
+        },
+        {
+          "quarter": "2025 Q1",
+          "transactions": 2995,
+          "medianPrice": 250000,
+          "meanPrice": 285951
+        },
+        {
+          "quarter": "2025 Q2",
+          "transactions": 1965,
+          "medianPrice": 240000,
+          "meanPrice": 278136
+        },
+        {
+          "quarter": "2025 Q3",
+          "transactions": 2792,
+          "medianPrice": 248000,
+          "meanPrice": 292430
+        },
+        {
+          "quarter": "2025 Q4",
+          "transactions": 2723,
+          "medianPrice": 255000,
+          "meanPrice": 301857
+        },
+        {
+          "quarter": "2026 Q1",
+          "transactions": 1922,
+          "medianPrice": 240000,
+          "meanPrice": 284496
+        },
+        {
+          "quarter": "2026 Q2",
+          "transactions": 1810,
+          "medianPrice": 245000,
+          "meanPrice": 285232
+        },
+        {
+          "quarter": "2026 Q3",
+          "transactions": 1460,
+          "medianPrice": 250000,
+          "meanPrice": 288889
+        }
+      ],
+      "byType": [
+        {
+          "type": "Detached",
+          "transactions": 4812,
+          "medianPrice": 420000,
+          "meanPrice": 487459
+        },
+        {
+          "type": "Flat/maisonette",
+          "transactions": 3418,
+          "medianPrice": 155000,
+          "meanPrice": 175236
+        },
+        {
+          "type": "Semi-detached",
+          "transactions": 10319,
+          "medianPrice": 255500,
+          "meanPrice": 279028
+        },
+        {
+          "type": "Terraced",
+          "transactions": 7219,
+          "medianPrice": 196500,
+          "meanPrice": 216400
+        }
+      ]
+    },
+    "bristol": {
+      "transactions": 15624,
+      "medianPrice": 348000,
+      "meanPrice": 398200,
+      "byYear": [
+        {
+          "year": "2024",
+          "transactions": 5892,
+          "medianPrice": 340000,
+          "meanPrice": 392423
+        },
+        {
+          "year": "2025",
+          "transactions": 6342,
+          "medianPrice": 350000,
+          "meanPrice": 402886
+        },
+        {
+          "year": "2026",
+          "transactions": 3390,
+          "medianPrice": 355000,
+          "meanPrice": 399474
+        }
+      ],
+      "byQuarter": [
+        {
+          "quarter": "2024 Q1",
+          "transactions": 1286,
+          "medianPrice": 325000,
+          "meanPrice": 372408
+        },
+        {
+          "quarter": "2024 Q2",
+          "transactions": 1302,
+          "medianPrice": 330000,
+          "meanPrice": 379288
+        },
+        {
+          "quarter": "2024 Q3",
+          "transactions": 1664,
+          "medianPrice": 345715,
+          "meanPrice": 401301
+        },
+        {
+          "quarter": "2024 Q4",
+          "transactions": 1640,
+          "medianPrice": 357500,
+          "meanPrice": 409536
+        },
+        {
+          "quarter": "2025 Q1",
+          "transactions": 2023,
+          "medianPrice": 355000,
+          "meanPrice": 404286
+        },
+        {
+          "quarter": "2025 Q2",
+          "transactions": 986,
+          "medianPrice": 320000,
+          "meanPrice": 372094
+        },
+        {
+          "quarter": "2025 Q3",
+          "transactions": 1626,
+          "medianPrice": 352800,
+          "meanPrice": 417627
+        },
+        {
+          "quarter": "2025 Q4",
+          "transactions": 1707,
+          "medianPrice": 350000,
+          "meanPrice": 404970
+        },
+        {
+          "quarter": "2026 Q1",
+          "transactions": 1275,
+          "medianPrice": 350000,
+          "meanPrice": 400462
+        },
+        {
+          "quarter": "2026 Q2",
+          "transactions": 1122,
+          "medianPrice": 360000,
+          "meanPrice": 399535
+        },
+        {
+          "quarter": "2026 Q3",
+          "transactions": 993,
+          "medianPrice": 360000,
+          "meanPrice": 398137
+        }
+      ],
+      "byType": [
+        {
+          "type": "Detached",
+          "transactions": 746,
+          "medianPrice": 550000,
+          "meanPrice": 691020
+        },
+        {
+          "type": "Flat/maisonette",
+          "transactions": 4965,
+          "medianPrice": 260000,
+          "meanPrice": 289721
+        },
+        {
+          "type": "Semi-detached",
+          "transactions": 3297,
+          "medianPrice": 370000,
+          "meanPrice": 457710
+        },
+        {
+          "type": "Terraced",
+          "transactions": 6616,
+          "medianPrice": 375500,
+          "meanPrice": 416934
+        }
+      ]
+    }
+  }
+}

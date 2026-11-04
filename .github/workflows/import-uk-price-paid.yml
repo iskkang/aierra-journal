@@ -1,0 +1,45 @@
+name: Import UK Price Paid Data
+on:
+  workflow_dispatch:
+    inputs:
+      csv_url:
+        description: "Verified official HM Land Registry yearly CSV HTTPS URL"
+        required: true
+        type: string
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Validate official source URL
+        env:
+          CSV_URL: ${{ inputs.csv_url }}
+        run: |
+          python - <<'PY'
+          import os,urllib.parse
+          u=urllib.parse.urlparse(os.environ["CSV_URL"])
+          if u.scheme!="https" or u.hostname!="publicdata.landregistry.gov.uk" or not u.path.lower().endswith(".csv"):
+              raise SystemExit("Only official publicdata.landregistry.gov.uk CSV URLs are allowed")
+          PY
+      - name: Download official data
+        env:
+          CSV_URL: ${{ inputs.csv_url }}
+        run: curl --fail --location --retry 3 --max-time 900 --output /tmp/price-paid.csv "$CSV_URL"
+      - name: Build validated aggregates
+        env:
+          CSV_URL: ${{ inputs.csv_url }}
+        run: python scripts/build-market-data.py --csv /tmp/price-paid.csv --source-url "$CSV_URL"
+      - name: Commit only if data changed
+        run: |
+          git config user.name "aierra-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/market-snapshot.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update UK official price paid aggregates"
+            git push
+          fi

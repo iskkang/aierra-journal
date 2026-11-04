@@ -1,0 +1,1 @@
+import Link from "next/link";export default function NotFound(){return <main className="wrap market-page"><h1>Market not found</h1><Link href="/markets">Browse markets</Link></main>}

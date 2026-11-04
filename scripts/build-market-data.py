@@ -1,38 +1,90 @@
 #!/usr/bin/env python3
-"""Aggregate HM Land Registry yearly Price Paid Data CSV into public city summaries.
-Usage: python scripts/build-market-data.py --csv path/to/pp-2025.csv --source-url https://...
-Never silently publish partial downloads or synthetic statistics.
-"""
-import argparse,csv,json,statistics,datetime,pathlib,collections,sys
-DISTRICTS={
-"london":set("CITY OF WESTMINSTER|CAMDEN|ISLINGTON|HACKNEY|TOWER HAMLETS|SOUTHWARK|LAMBETH|WANDSWORTH|KENSINGTON AND CHELSEA|HAMMERSMITH AND FULHAM|GREENWICH|LEWISHAM|NEWHAM|BRENT|EALING|BARNET|ENFIELD|HARINGEY|HOUNSLOW|RICHMOND UPON THAMES|KINGSTON UPON THAMES|MERTON|SUTTON|CROYDON|BROMLEY|BEXLEY|HAVERING|REDBRIDGE|WALTHAM FOREST|HILLINGDON|HARROW|BARKING AND DAGENHAM|CITY OF LONDON".split("|")),
-"manchester":{"MANCHESTER"},"birmingham":{"BIRMINGHAM"},"liverpool":{"LIVERPOOL"},"leeds":{"LEEDS"},"bristol":{"CITY OF BRISTOL","BRISTOL"}}
+"""Build verifiable city-level UK market statistics from official annual HMLR Price Paid CSVs."""
+import argparse
+import collections
+import csv
+import datetime as dt
+import json
+import pathlib
+import statistics
+
+DISTRICTS = {
+ "london": set("CITY OF WESTMINSTER|CAMDEN|ISLINGTON|HACKNEY|TOWER HAMLETS|SOUTHWARK|LAMBETH|WANDSWORTH|KENSINGTON AND CHELSEA|HAMMERSMITH AND FULHAM|GREENWICH|LEWISHAM|NEWHAM|BRENT|EALING|BARNET|ENFIELD|HARINGEY|HOUNSLOW|RICHMOND UPON THAMES|KINGSTON UPON THAMES|MERTON|SUTTON|CROYDON|BROMLEY|BEXLEY|HAVERING|REDBRIDGE|WALTHAM FOREST|HILLINGDON|HARROW|BARKING AND DAGENHAM|CITY OF LONDON".split("|")),
+ "manchester": {"MANCHESTER"},
+ "birmingham": {"BIRMINGHAM"},
+ "liverpool": {"LIVERPOOL"},
+ "leeds": {"LEEDS"},
+ "bristol": {"CITY OF BRISTOL", "BRISTOL"},
+}
+DISTRICT_TO_CITY = {district:city for city, districts in DISTRICTS.items() for district in districts}
+TYPES = {"D":"Detached","S":"Semi-detached","T":"Terraced","F":"Flat/maisonette"}
+
+def summarise(prices):
+ return {"transactions":len(prices),"medianPrice":round(statistics.median(prices)),"meanPrice":round(statistics.mean(prices))}
+
 def main():
- p=argparse.ArgumentParser();p.add_argument("--csv",required=True,nargs="+");p.add_argument("--source-url",required=True);p.add_argument("--output",default="data/market-snapshot.json");args=p.parse_args()
- if not args.source_url.startswith("https://"):p.error("source URL must be https")
- data={c:collections.defaultdict(list) for c in DISTRICTS};seen=set();min_date=None;max_date=None;total=0
- for csv_path in args.csv:
-  with open(csv_path,newline="",encoding="utf-8-sig") as f:
-   for row in csv.reader(f):
-    if len(row)<16:continue
-    ident,price,date,postcode,kind,old,tenure,paon,saon,street,locality,town,district,county,category,status=row[:16]
-    if ident in seen:raise ValueError("Duplicate transaction ID: "+ident)
-    seen.add(ident)
-    if category.upper()!="A" or kind.upper() not in ("D","S","T","F"):continue
+ parser=argparse.ArgumentParser()
+ parser.add_argument("--csv",required=True,nargs="+")
+ parser.add_argument("--source-url",required=True)
+ parser.add_argument("--output",default="data/market-snapshot.json")
+ args=parser.parse_args()
+ if not args.source_url.startswith("https://"):parser.error("Official source must be HTTPS")
+ annual=collections.defaultdict(lambda:collections.defaultdict(list))
+ quarterly=collections.defaultdict(lambda:collections.defaultdict(list))
+ kinds=collections.defaultdict(lambda:collections.defaultdict(list))
+ all_prices=collections.defaultdict(list)
+ seen=set()
+ date_min=date_max=None
+ rows=0
+ for filename in args.csv:
+  file_rows=0
+  with open(filename,encoding="utf-8-sig",newline="") as fh:
+   for row in csv.reader(fh):
+    if len(row)!=16:continue
+    identifier,price,date,postcode,kind,old,tenure,paon,saon,street,locality,town,district,county,category,status=row
+    if category.upper()!="A" or kind.upper() not in TYPES:continue
+    city=DISTRICT_TO_CITY.get(district.upper().strip())
+    if city is None:continue
+    if identifier in seen:raise ValueError("Duplicate transaction ID: "+identifier)
+    seen.add(identifier)
     try:
-     amount=int(price);day=datetime.date.fromisoformat(date[:10])
+     amount=int(price)
+     day=dt.date.fromisoformat(date[:10])
     except ValueError:continue
     if amount<=0:continue
-    for city,districts in DISTRICTS.items():
-     if district.upper().strip() in districts:
-      data[city][str(day.year)].append(amount);total+=1
-      min_date=min(min_date,day) if min_date else day;max_date=max(max_date,day) if max_date else day
- if total<100:raise ValueError("Insufficient matching records; refusing to overwrite output")
- result={"source":"HM Land Registry Price Paid Data","sourceUrl":args.source_url,"updatedAt":datetime.datetime.now(datetime.timezone.utc).isoformat(),"coverageStart":min_date.isoformat(),"coverageEnd":max_date.isoformat(),"scope":"England and Wales; standard category A; residential D/S/T/F; administrative district grouping","cities":{}}
- for city,years in data.items():
-  all_prices=[p for prices in years.values() for p in prices]
-  if not all_prices:continue
-  result["cities"][city]={"transactions":len(all_prices),"medianPrice":round(statistics.median(all_prices)),"meanPrice":round(statistics.mean(all_prices)),"byYear":[{"year":y,"transactions":len(prices),"medianPrice":round(statistics.median(prices))} for y,prices in sorted(years.items())]}
- out=pathlib.Path(args.output);out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
- print("Wrote",out,"with",total,"matching transactions")
+    year=str(day.year)
+    quarter=f"{day.year} Q{(day.month-1)//3+1}"
+    annual[city][year].append(amount)
+    quarterly[city][quarter].append(amount)
+    kinds[city][kind.upper()].append(amount)
+    all_prices[city].append(amount)
+    date_min=min(date_min,day) if date_min else day
+    date_max=max(date_max,day) if date_max else day
+    file_rows+=1
+    rows+=1
+  if file_rows<100:raise ValueError(f"Unexpectedly few eligible city transactions in {filename}: {file_rows}")
+ if rows<10000 or len(all_prices)!=len(DISTRICTS):raise ValueError("Incomplete input: expected all six cities and at least 10,000 transactions")
+ now=dt.datetime.now(dt.timezone.utc)
+ result={
+  "source":"HM Land Registry Price Paid Data",
+  "sourceUrl":args.source_url,
+  "updatedAt":now.isoformat(),
+  "coverageStart":date_min.isoformat(),
+  "coverageEnd":date_max.isoformat(),
+  "scope":"England and Wales; standard category A; property types D/S/T/F; administrative districts; nominal, unadjusted prices",
+  "cities":{}
+ }
+ for city in DISTRICTS:
+  years=annual[city]
+  if not years:raise ValueError("No transactions for "+city)
+  result["cities"][city]={
+   **summarise(all_prices[city]),
+   "byYear":[{"year":y,**summarise(v)} for y,v in sorted(years.items())],
+   "byQuarter":[{"quarter":q,**summarise(v)} for q,v in sorted(quarterly[city].items())],
+   "byType":[{"type":TYPES[k],**summarise(v)} for k,v in sorted(kinds[city].items())]
+  }
+ output=pathlib.Path(args.output)
+ output.parent.mkdir(parents=True,exist_ok=True)
+ output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+ print(f"Validated {rows:,} eligible sales across {len(all_prices)} cities; wrote {output}")
 if __name__=="__main__":main()

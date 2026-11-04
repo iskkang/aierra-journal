@@ -6,6 +6,6 @@ export const cities = [
 {slug:"leeds",name:"Leeds",region:"West Yorkshire",towns:[],districts:["LEEDS"]},
 {slug:"bristol",name:"Bristol",region:"South West England",towns:[],districts:["CITY OF BRISTOL","BRISTOL"]},
 ] as const;
-export type MarketSnapshot={source:string;sourceUrl:string;updatedAt:string;coverageStart:string;coverageEnd:string;scope:string;cities:Record<string,{transactions:number;medianPrice:number;meanPrice:number;byYear:{year:string;transactions:number;medianPrice:number}[]}>};
+export type MarketSnapshot={source:string;sourceUrl:string;updatedAt:string;coverageStart:string;coverageEnd:string;scope:string;cities:Record<string,{transactions:number;medianPrice:number;meanPrice:number;byYear:{year:string;transactions:number;medianPrice:number;meanPrice:number}[];byQuarter?:{quarter:string;transactions:number;medianPrice:number;meanPrice:number}[];byType?:{type:string;transactions:number;medianPrice:number;meanPrice:number}[]}>};
 export async function readMarketSnapshot():Promise<MarketSnapshot|null>{try{const data=await import("../data/market-snapshot.json");return data.default as MarketSnapshot}catch{return null}}
 export function gbp(n:number){return new Intl.NumberFormat("en-GB",{style:"currency",currency:"GBP",maximumFractionDigits:0}).format(n)}

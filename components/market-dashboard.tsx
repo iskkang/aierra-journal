@@ -3,6 +3,8 @@ import {useMemo,useState} from "react";
 type Point={quarter:string;transactions:number;medianPrice:number;meanPrice:number};
 type Year={year:string;transactions:number;medianPrice:number;meanPrice:number};
 type HomeType={type:string;transactions:number;medianPrice:number;meanPrice:number};
+type District={district:string;transactions:number;medianPrice:number;meanPrice:number};
+type Sold={date:string;price:number;type:string;postcode:string;street:string;town:string;district:string};
 const money=(n:number)=>"£"+Math.round(n).toLocaleString("en-GB");
 const compact=(n:number)=>"£"+(n/1000).toFixed(0)+"k";
 const percent=(current:number,prev:number)=>prev?((current-prev)/prev*100):null;
@@ -24,7 +26,7 @@ function SeriesChart({points,field}:{points:Point[];field:"medianPrice"|"transac
  {points.map((p,i)=><g key={p.quarter}><circle cx={x(i)} cy={y(p[field])} r="4.5" fill="#fff" stroke="#1f668d" strokeWidth="2.5"/>{(i%2===0||i===points.length-1)&&<text x={x(i)} y={height-16} textAnchor="middle" fill="#647581" fontSize="11">{p.quarter.replace("20","").replace(" ","·")}</text>}<title>{p.quarter}: {field==="medianPrice"?money(p[field]):p[field].toLocaleString("en-GB")+" sales"}</title></g>)}
  </svg></div>
 }
-export function MarketDashboard({city,years,quarters,types,coverageEnd}:{city:string;years:Year[];quarters:Point[];types:HomeType[];coverageEnd:string}){
+export function MarketDashboard({city,years,quarters,types,districts,sales,coverageEnd}:{city:string;years:Year[];quarters:Point[];types:HomeType[];districts:District[];sales:Sold[];coverageEnd:string}){
  const [metric,setMetric]=useState<"medianPrice"|"transactions">("medianPrice");
  const [range,setRange]=useState<"all"|"recent">("all");
  const ordered=useMemo(()=>[...quarters].sort((a,b)=>a.quarter.localeCompare(b.quarter)),[quarters]);
@@ -34,6 +36,10 @@ export function MarketDashboard({city,years,quarters,types,coverageEnd}:{city:st
  const yoy=last&&lastYear?percent(last.medianPrice,lastYear.medianPrice):null;
  const salesYoy=last&&lastYear?percent(last.transactions,lastYear.transactions):null;
  const maxType=Math.max(1,...types.map(t=>t.medianPrice));
+ const [districtSort,setDistrictSort]=useState<"price"|"volume">("price");
+ const [saleType,setSaleType]=useState("All");
+ const shownDistricts=[...districts].sort((a,b)=>districtSort==="price"?b.medianPrice-a.medianPrice:b.transactions-a.transactions);
+ const shownSales=sales.filter(s=>saleType==="All"||s.type===saleType).slice(0,9);
  return <div className="dashboard-stack">
  <div className="dashboard-snapshot"><div><span className="snapshot-label">LATEST OBSERVED QUARTER</span><strong>{last?.quarter??"Not available"}</strong><small>Registration-based · provisional</small></div>
  <div><span className="snapshot-label">MEDIAN PRICE · Q/Q</span><strong className={changeClass(qoq)}>{formatChange(qoq)}</strong><small>Versus previous quarter</small></div>
@@ -44,5 +50,7 @@ export function MarketDashboard({city,years,quarters,types,coverageEnd}:{city:st
  <p className="dashboard-caveat">Important: quarterly sales volume is provisional, particularly in the latest quarter. A shift in the composition of sold properties can change the median without an equivalent shift in like-for-like values.</p></section>
  <div className="dashboard-two"><section className="dashboard-panel"><div className="dashboard-panel-head"><div><span className="dashboard-section-index">PROPERTY MIX</span><h2>Prices by property type</h2><p>Median price across the full coverage period.</p></div></div><div className="type-bars">{types.map(t=><div className="type-bar-row" key={t.type}><div className="type-bar-info"><span>{t.type}</span><strong>{money(t.medianPrice)}</strong></div><div className="type-track"><span style={{width:(100*t.medianPrice/maxType)+"%"}}/></div><small>{t.transactions.toLocaleString("en-GB")} recorded sales</small></div>)}</div></section>
  <section className="dashboard-panel"><div className="dashboard-panel-head"><div><span className="dashboard-section-index">YEARLY COMPARISON</span><h2>Annual transaction data</h2><p>Recent years may not contain twelve complete months.</p></div></div><div className="table-scroll"><table className="data-table"><thead><tr><th>Year</th><th>Median sale</th><th>Sales</th></tr></thead><tbody>{years.map(y=><tr key={y.year}><td>{y.year}{Number(y.year)===Number(coverageEnd.slice(0,4))?"*":""}</td><td>{money(y.medianPrice)}</td><td>{y.transactions.toLocaleString("en-GB")}</td></tr>)}</tbody></table></div><p className="dashboard-caveat">*Year to date, through {coverageEnd}. Yearly totals are not directly comparable until all periods are complete.</p></section></div>
+ {districts.length>1?<section className="dashboard-panel region-panel"><div className="dashboard-panel-head"><div><span className="dashboard-section-index">LOCAL AREA COMPARISON</span><h2>Compare boroughs and districts</h2><p>Registered sales by administrative district across the full observation period. London boroughs can vary significantly.</p></div><div className="chart-controls"><button className={districtSort==="price"?"active":""} onClick={()=>setDistrictSort("price")}>Median price</button><button className={districtSort==="volume"?"active":""} onClick={()=>setDistrictSort("volume")}>Sales count</button></div></div><div className="region-list">{shownDistricts.map(d=><div className="region-row" key={d.district}><span>{d.district}</span><strong>{money(d.medianPrice)}</strong><small>{d.transactions.toLocaleString("en-GB")} sales</small></div>)}</div></section>:null}
+ <section className="dashboard-panel sold-panel"><div className="dashboard-panel-head"><div><span className="dashboard-section-index">INDIVIDUAL REGISTERED TRANSACTIONS</span><h2>Recently completed sales</h2><p>Examples from the official register, ordered by recorded completion date. These are sold properties, not homes currently for sale.</p></div><div className="chart-controls"><button className={saleType==="All"?"active":""} onClick={()=>setSaleType("All")}>All</button><button className={saleType==="Flat/maisonette"?"active":""} onClick={()=>setSaleType("Flat/maisonette")}>Flats</button><button className={saleType==="Terraced"?"active":""} onClick={()=>setSaleType("Terraced")}>Terraced</button></div></div>{sales.length?<div className="sold-grid">{shownSales.map((s,i)=><article className="sold-card" key={s.date+"-"+s.postcode+"-"+i}><span className="dashboard-section-index">SOLD · {s.date}</span><h3>{money(s.price)}</h3><p>{s.street||s.town}, {s.district}</p><div><span>{s.type}</span><span>{s.postcode}</span></div></article>)}</div>:<div className="empty-state"><strong>Individual transactions are being prepared.</strong><p>The next verified data refresh will populate recent completed sales. No example addresses or asking prices are invented.</p></div>}</section>
  </div>
 }

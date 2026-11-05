@@ -1,7 +1,7 @@
 {
   "source": "HM Land Registry Price Paid Data",
   "sourceUrl": "https://www.gov.uk/government/statistical-data-sets/price-paid-data-yearly-file",
-  "updatedAt": "2026-11-04T16:15:27.073004+00:00",
+  "updatedAt": "2026-11-05T02:47:47.263230+00:00",
   "coverageStart": "2024-01-01",
   "coverageEnd": "2026-09-30",
   "scope": "England and Wales; standard category A; property types D/S/T/F; administrative districts; nominal, unadjusted prices",
@@ -123,6 +123,370 @@
           "medianPrice": 590000,
           "meanPrice": 802889
         }
+      ],
+      "byDistrict": [
+        {
+          "district": "Barking And Dagenham",
+          "transactions": 3315,
+          "medianPrice": 377500,
+          "meanPrice": 368691
+        },
+        {
+          "district": "Barnet",
+          "transactions": 8661,
+          "medianPrice": 583000,
+          "meanPrice": 743735
+        },
+        {
+          "district": "Bexley",
+          "transactions": 7115,
+          "medianPrice": 425000,
+          "meanPrice": 440839
+        },
+        {
+          "district": "Brent",
+          "transactions": 4774,
+          "medianPrice": 553690,
+          "meanPrice": 667099
+        },
+        {
+          "district": "Bromley",
+          "transactions": 11095,
+          "medianPrice": 517000,
+          "meanPrice": 587796
+        },
+        {
+          "district": "Camden",
+          "transactions": 5103,
+          "medianPrice": 775000,
+          "meanPrice": 1167066
+        },
+        {
+          "district": "City Of London",
+          "transactions": 445,
+          "medianPrice": 790000,
+          "meanPrice": 975614
+        },
+        {
+          "district": "City Of Westminster",
+          "transactions": 5488,
+          "medianPrice": 890000,
+          "meanPrice": 1734283
+        },
+        {
+          "district": "Croydon",
+          "transactions": 9649,
+          "medianPrice": 425000,
+          "meanPrice": 459672
+        },
+        {
+          "district": "Ealing",
+          "transactions": 7183,
+          "medianPrice": 525000,
+          "meanPrice": 648237
+        },
+        {
+          "district": "Enfield",
+          "transactions": 6117,
+          "medianPrice": 473500,
+          "meanPrice": 549476
+        },
+        {
+          "district": "Greenwich",
+          "transactions": 7100,
+          "medianPrice": 460000,
+          "meanPrice": 523149
+        },
+        {
+          "district": "Hackney",
+          "transactions": 5549,
+          "medianPrice": 590000,
+          "meanPrice": 711944
+        },
+        {
+          "district": "Hammersmith And Fulham",
+          "transactions": 5721,
+          "medianPrice": 750000,
+          "meanPrice": 1008662
+        },
+        {
+          "district": "Haringey",
+          "transactions": 5606,
+          "medianPrice": 567250,
+          "meanPrice": 727283
+        },
+        {
+          "district": "Harrow",
+          "transactions": 4189,
+          "medianPrice": 550000,
+          "meanPrice": 590929
+        },
+        {
+          "district": "Havering",
+          "transactions": 8088,
+          "medianPrice": 450000,
+          "meanPrice": 472809
+        },
+        {
+          "district": "Hillingdon",
+          "transactions": 6249,
+          "medianPrice": 502500,
+          "meanPrice": 533384
+        },
+        {
+          "district": "Hounslow",
+          "transactions": 5310,
+          "medianPrice": 485000,
+          "meanPrice": 604226
+        },
+        {
+          "district": "Islington",
+          "transactions": 5205,
+          "medianPrice": 661166,
+          "meanPrice": 867953
+        },
+        {
+          "district": "Kensington And Chelsea",
+          "transactions": 4205,
+          "medianPrice": 1170000,
+          "meanPrice": 2021739
+        },
+        {
+          "district": "Kingston Upon Thames",
+          "transactions": 4872,
+          "medianPrice": 550000,
+          "meanPrice": 640163
+        },
+        {
+          "district": "Lambeth",
+          "transactions": 9248,
+          "medianPrice": 542500,
+          "meanPrice": 665451
+        },
+        {
+          "district": "Lewisham",
+          "transactions": 7593,
+          "medianPrice": 470000,
+          "meanPrice": 542957
+        },
+        {
+          "district": "Merton",
+          "transactions": 5832,
+          "medianPrice": 550000,
+          "meanPrice": 737683
+        },
+        {
+          "district": "Newham",
+          "transactions": 4916,
+          "medianPrice": 445000,
+          "meanPrice": 461980
+        },
+        {
+          "district": "Redbridge",
+          "transactions": 5390,
+          "medianPrice": 500000,
+          "meanPrice": 555404
+        },
+        {
+          "district": "Richmond Upon Thames",
+          "transactions": 6741,
+          "medianPrice": 720000,
+          "meanPrice": 926728
+        },
+        {
+          "district": "Southwark",
+          "transactions": 7615,
+          "medianPrice": 545000,
+          "meanPrice": 678996
+        },
+        {
+          "district": "Sutton",
+          "transactions": 5934,
+          "medianPrice": 458000,
+          "meanPrice": 498203
+        },
+        {
+          "district": "Tower Hamlets",
+          "transactions": 6956,
+          "medianPrice": 500000,
+          "meanPrice": 585239
+        },
+        {
+          "district": "Waltham Forest",
+          "transactions": 7139,
+          "medianPrice": 535000,
+          "meanPrice": 566031
+        },
+        {
+          "district": "Wandsworth",
+          "transactions": 12445,
+          "medianPrice": 650000,
+          "meanPrice": 829182
+        }
+      ],
+      "recentSales": [
+        {
+          "date": "2026-09-30",
+          "price": 280000,
+          "type": "Flat/maisonette",
+          "postcode": "CR0 1QD",
+          "street": "High Street",
+          "town": "Croydon",
+          "district": "Croydon"
+        },
+        {
+          "date": "2026-09-29",
+          "price": 762000,
+          "type": "Flat/maisonette",
+          "postcode": "SE21 8NL",
+          "street": "Croxted Road",
+          "town": "London",
+          "district": "Lambeth"
+        },
+        {
+          "date": "2026-09-28",
+          "price": 710000,
+          "type": "Flat/maisonette",
+          "postcode": "SW11 1HE",
+          "street": "Battersea Rise",
+          "town": "London",
+          "district": "Wandsworth"
+        },
+        {
+          "date": "2026-09-28",
+          "price": 655000,
+          "type": "Terraced",
+          "postcode": "KT5 8SX",
+          "street": "King Charles Crescent",
+          "town": "Surbiton",
+          "district": "Kingston Upon Thames"
+        },
+        {
+          "date": "2026-09-28",
+          "price": 320000,
+          "type": "Flat/maisonette",
+          "postcode": "SE13 5HW",
+          "street": "Wisteria Road",
+          "town": "London",
+          "district": "Lewisham"
+        },
+        {
+          "date": "2026-09-28",
+          "price": 440000,
+          "type": "Flat/maisonette",
+          "postcode": "W14 9XN",
+          "street": "Sun Road",
+          "town": "London",
+          "district": "Hammersmith And Fulham"
+        },
+        {
+          "date": "2026-09-28",
+          "price": 350000,
+          "type": "Flat/maisonette",
+          "postcode": "N22 7BJ",
+          "street": "Alexandra Park Road",
+          "town": "London",
+          "district": "Haringey"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 575000,
+          "type": "Flat/maisonette",
+          "postcode": "TW1 3AS",
+          "street": "Richmond Road",
+          "town": "Twickenham",
+          "district": "Richmond Upon Thames"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 307500,
+          "type": "Flat/maisonette",
+          "postcode": "SW2 5TX",
+          "street": "Acre Lane",
+          "town": "London",
+          "district": "Lambeth"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 575000,
+          "type": "Flat/maisonette",
+          "postcode": "SE24 0HU",
+          "street": "Hinton Road",
+          "town": "London",
+          "district": "Lambeth"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 502500,
+          "type": "Flat/maisonette",
+          "postcode": "SW2 3BD",
+          "street": "Barcombe Avenue",
+          "town": "London",
+          "district": "Lambeth"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 265560,
+          "type": "Terraced",
+          "postcode": "SE18 7RU",
+          "street": "Wernbrook Street",
+          "town": "London",
+          "district": "Greenwich"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 425000,
+          "type": "Flat/maisonette",
+          "postcode": "SE10 9DY",
+          "street": "Dowells Street",
+          "town": "London",
+          "district": "Greenwich"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 410000,
+          "type": "Flat/maisonette",
+          "postcode": "SE5 9PR",
+          "street": "Coldharbour Lane",
+          "town": "London",
+          "district": "Southwark"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 452500,
+          "type": "Flat/maisonette",
+          "postcode": "SW15 1DP",
+          "street": "Felsham Road",
+          "town": "London",
+          "district": "Wandsworth"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 615000,
+          "type": "Flat/maisonette",
+          "postcode": "SE16 4DW",
+          "street": "Clements Road",
+          "town": "London",
+          "district": "Southwark"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 450000,
+          "type": "Flat/maisonette",
+          "postcode": "TW10 5DE",
+          "street": "Sheen Court",
+          "town": "Richmond",
+          "district": "Richmond Upon Thames"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 610000,
+          "type": "Semi-detached",
+          "postcode": "SM4 4PG",
+          "street": "Tudor Drive",
+          "town": "Morden",
+          "district": "Merton"
+        }
       ]
     },
     "manchester": {
@@ -241,6 +605,178 @@
           "transactions": 3571,
           "medianPrice": 241000,
           "meanPrice": 271119
+        }
+      ],
+      "byDistrict": [
+        {
+          "district": "Manchester",
+          "transactions": 12538,
+          "medianPrice": 255000,
+          "meanPrice": 291131
+        }
+      ],
+      "recentSales": [
+        {
+          "date": "2026-09-25",
+          "price": 250000,
+          "type": "Terraced",
+          "postcode": "M8 8UQ",
+          "street": "Queens Road",
+          "town": "Manchester",
+          "district": "Manchester"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 248450,
+          "type": "Terraced",
+          "postcode": "M23 0LL",
+          "street": "Hillend Road",
+          "town": "Manchester",
+          "district": "Manchester"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 310000,
+          "type": "Terraced",
+          "postcode": "M20 4SU",
+          "street": "Westbank Road",
+          "town": "Manchester",
+          "district": "Manchester"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 309000,
+          "type": "Terraced",
+          "postcode": "M19 2TA",
+          "street": "Marley Road",
+          "town": "Manchester",
+          "district": "Manchester"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 255000,
+          "type": "Terraced",
+          "postcode": "M18 7AG",
+          "street": "Parkdale Avenue",
+          "town": "Manchester",
+          "district": "Manchester"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 245000,
+          "type": "Terraced",
+          "postcode": "M23 1BD",
+          "street": "Royal Oak Road",
+          "town": "Manchester",
+          "district": "Manchester"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 120000,
+          "type": "Terraced",
+          "postcode": "M18 7QH",
+          "street": "Glencastle Road",
+          "town": "Manchester",
+          "district": "Manchester"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 185000,
+          "type": "Semi-detached",
+          "postcode": "M22 1GU",
+          "street": "Chidwall Road",
+          "town": "Manchester",
+          "district": "Manchester"
+        },
+        {
+          "date": "2026-09-23",
+          "price": 170000,
+          "type": "Terraced",
+          "postcode": "M18 8PA",
+          "street": "Woodhouse Street",
+          "town": "Manchester",
+          "district": "Manchester"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 385000,
+          "type": "Terraced",
+          "postcode": "M16 8QW",
+          "street": "Athol Road",
+          "town": "Manchester",
+          "district": "Manchester"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 795000,
+          "type": "Semi-detached",
+          "postcode": "M21 8UX",
+          "street": "Clifton Road",
+          "town": "Manchester",
+          "district": "Manchester"
+        },
+        {
+          "date": "2026-09-21",
+          "price": 182500,
+          "type": "Terraced",
+          "postcode": "M18 7JN",
+          "street": "Reddish Lane",
+          "town": "Manchester",
+          "district": "Manchester"
+        },
+        {
+          "date": "2026-09-21",
+          "price": 214500,
+          "type": "Semi-detached",
+          "postcode": "M23 0ER",
+          "street": "Melsomby Road",
+          "town": "Manchester",
+          "district": "Manchester"
+        },
+        {
+          "date": "2026-09-18",
+          "price": 115000,
+          "type": "Flat/maisonette",
+          "postcode": "M18 7GA",
+          "street": "Rawsthorne Avenue",
+          "town": "Manchester",
+          "district": "Manchester"
+        },
+        {
+          "date": "2026-09-18",
+          "price": 340000,
+          "type": "Terraced",
+          "postcode": "M13 9HP",
+          "street": "Guide Post Road",
+          "town": "Manchester",
+          "district": "Manchester"
+        },
+        {
+          "date": "2026-09-18",
+          "price": 218000,
+          "type": "Terraced",
+          "postcode": "M19 3FP",
+          "street": "Guildford Road",
+          "town": "Manchester",
+          "district": "Manchester"
+        },
+        {
+          "date": "2026-09-18",
+          "price": 335000,
+          "type": "Terraced",
+          "postcode": "M22 4JR",
+          "street": "Longley Lane",
+          "town": "Manchester",
+          "district": "Manchester"
+        },
+        {
+          "date": "2026-09-18",
+          "price": 170000,
+          "type": "Flat/maisonette",
+          "postcode": "M14 6DL",
+          "street": "Wilbraham Road",
+          "town": "Manchester",
+          "district": "Manchester"
         }
       ]
     },
@@ -361,6 +897,178 @@
           "medianPrice": 215000,
           "meanPrice": 232494
         }
+      ],
+      "byDistrict": [
+        {
+          "district": "Birmingham",
+          "transactions": 24391,
+          "medianPrice": 236000,
+          "meanPrice": 273178
+        }
+      ],
+      "recentSales": [
+        {
+          "date": "2026-09-30",
+          "price": 140000,
+          "type": "Flat/maisonette",
+          "postcode": "B23 6GE",
+          "street": "Northcroft Way",
+          "town": "Birmingham",
+          "district": "Birmingham"
+        },
+        {
+          "date": "2026-09-30",
+          "price": 270000,
+          "type": "Semi-detached",
+          "postcode": "B36 8AL",
+          "street": "Bromford Road",
+          "town": "Birmingham",
+          "district": "Birmingham"
+        },
+        {
+          "date": "2026-09-28",
+          "price": 375000,
+          "type": "Semi-detached",
+          "postcode": "B42 1PA",
+          "street": "Rocky Lane",
+          "town": "Birmingham",
+          "district": "Birmingham"
+        },
+        {
+          "date": "2026-09-28",
+          "price": 250000,
+          "type": "Terraced",
+          "postcode": "B8 3EU",
+          "street": "Belchers Lane",
+          "town": "Birmingham",
+          "district": "Birmingham"
+        },
+        {
+          "date": "2026-09-28",
+          "price": 307000,
+          "type": "Semi-detached",
+          "postcode": "B31 1AL",
+          "street": "Senneleys Park Road",
+          "town": "Birmingham",
+          "district": "Birmingham"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 200000,
+          "type": "Terraced",
+          "postcode": "B23 6DD",
+          "street": "Reservoir Road",
+          "town": "Birmingham",
+          "district": "Birmingham"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 362500,
+          "type": "Detached",
+          "postcode": "B32 3XH",
+          "street": "Buttermere Drive",
+          "town": "Birmingham",
+          "district": "Birmingham"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 222500,
+          "type": "Terraced",
+          "postcode": "B31 4QE",
+          "street": "Groveley Lane",
+          "town": "Birmingham",
+          "district": "Birmingham"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 407500,
+          "type": "Terraced",
+          "postcode": "B76 1DZ",
+          "street": "Bonner Drive",
+          "town": "Sutton Coldfield",
+          "district": "Birmingham"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 235000,
+          "type": "Semi-detached",
+          "postcode": "B45 9PX",
+          "street": "Kendal Rise Road",
+          "town": "Birmingham",
+          "district": "Birmingham"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 325172,
+          "type": "Terraced",
+          "postcode": "B14 7EN",
+          "street": "Addison Road",
+          "town": "Birmingham",
+          "district": "Birmingham"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 192500,
+          "type": "Flat/maisonette",
+          "postcode": "B13 9PP",
+          "street": "St Agnes Road",
+          "town": "Birmingham",
+          "district": "Birmingham"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 407500,
+          "type": "Semi-detached",
+          "postcode": "B75 7HN",
+          "street": "Yeomanry Close",
+          "town": "Sutton Coldfield",
+          "district": "Birmingham"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 205000,
+          "type": "Semi-detached",
+          "postcode": "B44 9AR",
+          "street": "Southgate Road",
+          "town": "Birmingham",
+          "district": "Birmingham"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 375000,
+          "type": "Terraced",
+          "postcode": "B17 9JU",
+          "street": "Regent Road",
+          "town": "Birmingham",
+          "district": "Birmingham"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 210500,
+          "type": "Terraced",
+          "postcode": "B11 3AN",
+          "street": "Knowle Road",
+          "town": "Birmingham",
+          "district": "Birmingham"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 272000,
+          "type": "Terraced",
+          "postcode": "B30 3AZ",
+          "street": "Cotteridge Road",
+          "town": "Birmingham",
+          "district": "Birmingham"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 410000,
+          "type": "Detached",
+          "postcode": "B72 1EP",
+          "street": "Simpson Road",
+          "town": "Sutton Coldfield",
+          "district": "Birmingham"
+        }
       ]
     },
     "liverpool": {
@@ -479,6 +1187,178 @@
           "transactions": 5230,
           "medianPrice": 155000,
           "meanPrice": 176038
+        }
+      ],
+      "byDistrict": [
+        {
+          "district": "Liverpool",
+          "transactions": 12164,
+          "medianPrice": 180000,
+          "meanPrice": 216445
+        }
+      ],
+      "recentSales": [
+        {
+          "date": "2026-09-28",
+          "price": 270000,
+          "type": "Semi-detached",
+          "postcode": "L15 6TH",
+          "street": "Woolton Road",
+          "town": "Liverpool",
+          "district": "Liverpool"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 277325,
+          "type": "Terraced",
+          "postcode": "L18 1EY",
+          "street": "Karslake Road",
+          "town": "Liverpool",
+          "district": "Liverpool"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 265000,
+          "type": "Terraced",
+          "postcode": "L25 7TL",
+          "street": "Speke Road",
+          "town": "Liverpool",
+          "district": "Liverpool"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 258000,
+          "type": "Semi-detached",
+          "postcode": "L15 9HP",
+          "street": "Newcastle Road",
+          "town": "Liverpool",
+          "district": "Liverpool"
+        },
+        {
+          "date": "2026-09-23",
+          "price": 30000,
+          "type": "Flat/maisonette",
+          "postcode": "L4 1TB",
+          "street": "Churnett Street",
+          "town": "Liverpool",
+          "district": "Liverpool"
+        },
+        {
+          "date": "2026-09-23",
+          "price": 30000,
+          "type": "Flat/maisonette",
+          "postcode": "L4 1TB",
+          "street": "Churnett Street",
+          "town": "Liverpool",
+          "district": "Liverpool"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 340500,
+          "type": "Semi-detached",
+          "postcode": "L17 9PS",
+          "street": "Larkfield Road",
+          "town": "Liverpool",
+          "district": "Liverpool"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 132000,
+          "type": "Semi-detached",
+          "postcode": "L4 1XU",
+          "street": "Orwell Road",
+          "town": "Liverpool",
+          "district": "Liverpool"
+        },
+        {
+          "date": "2026-09-21",
+          "price": 215000,
+          "type": "Semi-detached",
+          "postcode": "L9 3AA",
+          "street": "Broomfield Gardens",
+          "town": "Liverpool",
+          "district": "Liverpool"
+        },
+        {
+          "date": "2026-09-21",
+          "price": 400000,
+          "type": "Terraced",
+          "postcode": "L18 1HN",
+          "street": "Greenbank Road",
+          "town": "Liverpool",
+          "district": "Liverpool"
+        },
+        {
+          "date": "2026-09-18",
+          "price": 525000,
+          "type": "Semi-detached",
+          "postcode": "L14 3LL",
+          "street": "Staplands Road",
+          "town": "Liverpool",
+          "district": "Liverpool"
+        },
+        {
+          "date": "2026-09-18",
+          "price": 240000,
+          "type": "Semi-detached",
+          "postcode": "L27 1AF",
+          "street": "Viola Drive",
+          "town": "Liverpool",
+          "district": "Liverpool"
+        },
+        {
+          "date": "2026-09-18",
+          "price": 184225,
+          "type": "Terraced",
+          "postcode": "L9 3BA",
+          "street": "Chatsworth Avenue",
+          "town": "Liverpool",
+          "district": "Liverpool"
+        },
+        {
+          "date": "2026-09-18",
+          "price": 388000,
+          "type": "Detached",
+          "postcode": "L25 4AE",
+          "street": "Mountfield Crescent",
+          "town": "Liverpool",
+          "district": "Liverpool"
+        },
+        {
+          "date": "2026-09-18",
+          "price": 262000,
+          "type": "Terraced",
+          "postcode": "L18 1JS",
+          "street": "Briardale Road",
+          "town": "Liverpool",
+          "district": "Liverpool"
+        },
+        {
+          "date": "2026-09-18",
+          "price": 190000,
+          "type": "Flat/maisonette",
+          "postcode": "L1 5FE",
+          "street": "Henry Street",
+          "town": "Liverpool",
+          "district": "Liverpool"
+        },
+        {
+          "date": "2026-09-18",
+          "price": 176000,
+          "type": "Flat/maisonette",
+          "postcode": "L1 5BB",
+          "street": "Duke Street",
+          "town": "Liverpool",
+          "district": "Liverpool"
+        },
+        {
+          "date": "2026-09-18",
+          "price": 140000,
+          "type": "Flat/maisonette",
+          "postcode": "L3 4EU",
+          "street": "Royal Quay",
+          "town": "Liverpool",
+          "district": "Liverpool"
         }
       ]
     },
@@ -599,6 +1479,178 @@
           "medianPrice": 196500,
           "meanPrice": 216400
         }
+      ],
+      "byDistrict": [
+        {
+          "district": "Leeds",
+          "transactions": 25768,
+          "medianPrice": 245000,
+          "meanPrice": 286638
+        }
+      ],
+      "recentSales": [
+        {
+          "date": "2026-09-28",
+          "price": 299995,
+          "type": "Semi-detached",
+          "postcode": "LS15 8RD",
+          "street": "Ring Road",
+          "town": "Leeds",
+          "district": "Leeds"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 295000,
+          "type": "Semi-detached",
+          "postcode": "LS13 4JZ",
+          "street": "Green Hill Drive",
+          "town": "Leeds",
+          "district": "Leeds"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 555000,
+          "type": "Detached",
+          "postcode": "LS25 1LR",
+          "street": "Selby Road",
+          "town": "Leeds",
+          "district": "Leeds"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 155000,
+          "type": "Flat/maisonette",
+          "postcode": "LS13 1RE",
+          "street": "Narrowboat Wharf",
+          "town": "Leeds",
+          "district": "Leeds"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 255000,
+          "type": "Semi-detached",
+          "postcode": "LS16 5DF",
+          "street": "Latchmere Road",
+          "town": "Leeds",
+          "district": "Leeds"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 365000,
+          "type": "Semi-detached",
+          "postcode": "LS19 6LY",
+          "street": "Benton Park Road",
+          "town": "Leeds",
+          "district": "Leeds"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 168000,
+          "type": "Terraced",
+          "postcode": "WF3 2EL",
+          "street": "Common Lane",
+          "town": "Wakefield",
+          "district": "Leeds"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 97000,
+          "type": "Flat/maisonette",
+          "postcode": "LS8 1BW",
+          "street": "Street Lane",
+          "town": "Leeds",
+          "district": "Leeds"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 155000,
+          "type": "Terraced",
+          "postcode": "LS14 5DA",
+          "street": "Farndale Garth",
+          "town": "Leeds",
+          "district": "Leeds"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 240000,
+          "type": "Terraced",
+          "postcode": "LS18 5QF",
+          "street": "Lickless Drive",
+          "town": "Leeds",
+          "district": "Leeds"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 157500,
+          "type": "Terraced",
+          "postcode": "LS27 9ES",
+          "street": "King Street",
+          "town": "Leeds",
+          "district": "Leeds"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 300000,
+          "type": "Semi-detached",
+          "postcode": "LS18 5QD",
+          "street": "Springfield Mount",
+          "town": "Leeds",
+          "district": "Leeds"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 595000,
+          "type": "Detached",
+          "postcode": "LS25 2LU",
+          "street": "Athlone Rise",
+          "town": "Leeds",
+          "district": "Leeds"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 450000,
+          "type": "Semi-detached",
+          "postcode": "LS28 5LR",
+          "street": "Springbank Avenue",
+          "town": "Pudsey",
+          "district": "Leeds"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 113000,
+          "type": "Terraced",
+          "postcode": "LS7 4RL",
+          "street": "Dominion Close",
+          "town": "Leeds",
+          "district": "Leeds"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 265000,
+          "type": "Semi-detached",
+          "postcode": "LS27 7LT",
+          "street": "Highfield Close",
+          "town": "Leeds",
+          "district": "Leeds"
+        },
+        {
+          "date": "2026-09-23",
+          "price": 243000,
+          "type": "Terraced",
+          "postcode": "LS25 1DT",
+          "street": "Barley Fields Close",
+          "town": "Leeds",
+          "district": "Leeds"
+        },
+        {
+          "date": "2026-09-23",
+          "price": 445000,
+          "type": "Terraced",
+          "postcode": "LS17 8FW",
+          "street": "Birchwood Mews",
+          "town": "Leeds",
+          "district": "Leeds"
+        }
       ]
     },
     "bristol": {
@@ -717,6 +1769,178 @@
           "transactions": 6616,
           "medianPrice": 375500,
           "meanPrice": 416934
+        }
+      ],
+      "byDistrict": [
+        {
+          "district": "City Of Bristol",
+          "transactions": 15624,
+          "medianPrice": 348000,
+          "meanPrice": 398200
+        }
+      ],
+      "recentSales": [
+        {
+          "date": "2026-09-25",
+          "price": 178000,
+          "type": "Flat/maisonette",
+          "postcode": "BS7 9LP",
+          "street": "Dirac Road",
+          "town": "Bristol",
+          "district": "City Of Bristol"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 225000,
+          "type": "Flat/maisonette",
+          "postcode": "BS2 0EH",
+          "street": "Old Market Street",
+          "town": "Bristol",
+          "district": "City Of Bristol"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 396000,
+          "type": "Semi-detached",
+          "postcode": "BS5 7SD",
+          "street": "Cecil Avenue",
+          "town": "Bristol",
+          "district": "City Of Bristol"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 340000,
+          "type": "Semi-detached",
+          "postcode": "BS15 1JQ",
+          "street": "Ingleside Road",
+          "town": "Bristol",
+          "district": "City Of Bristol"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 138479,
+          "type": "Terraced",
+          "postcode": "BS2 9XB",
+          "street": "Narroways Road",
+          "town": "Bristol",
+          "district": "City Of Bristol"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 275000,
+          "type": "Semi-detached",
+          "postcode": "BS4 4FF",
+          "street": "Fox Close",
+          "town": "Bristol",
+          "district": "City Of Bristol"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 507000,
+          "type": "Terraced",
+          "postcode": "BS4 3RF",
+          "street": "Conway Road",
+          "town": "Bristol",
+          "district": "City Of Bristol"
+        },
+        {
+          "date": "2026-09-23",
+          "price": 380000,
+          "type": "Flat/maisonette",
+          "postcode": "BS8 2HA",
+          "street": "Osborne Road",
+          "town": "Bristol",
+          "district": "City Of Bristol"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 132000,
+          "type": "Flat/maisonette",
+          "postcode": "BS16 3RT",
+          "street": "New Station Road",
+          "town": "Bristol",
+          "district": "City Of Bristol"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 248000,
+          "type": "Flat/maisonette",
+          "postcode": "BS2 0GZ",
+          "street": "New Kingsley Road",
+          "town": "Bristol",
+          "district": "City Of Bristol"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 220000,
+          "type": "Flat/maisonette",
+          "postcode": "BS1 6FB",
+          "street": "Redcliff Mead Lane",
+          "town": "Bristol",
+          "district": "City Of Bristol"
+        },
+        {
+          "date": "2026-09-21",
+          "price": 440000,
+          "type": "Semi-detached",
+          "postcode": "BS10 6TD",
+          "street": "Royal Victoria Park",
+          "town": "Bristol",
+          "district": "City Of Bristol"
+        },
+        {
+          "date": "2026-09-21",
+          "price": 210000,
+          "type": "Flat/maisonette",
+          "postcode": "BS5 7HU",
+          "street": "Albert Grove South",
+          "town": "Bristol",
+          "district": "City Of Bristol"
+        },
+        {
+          "date": "2026-09-21",
+          "price": 505000,
+          "type": "Terraced",
+          "postcode": "BS4 3RU",
+          "street": "Upper Sandhurst Road",
+          "town": "Bristol",
+          "district": "City Of Bristol"
+        },
+        {
+          "date": "2026-09-21",
+          "price": 150000,
+          "type": "Flat/maisonette",
+          "postcode": "BS16 2RB",
+          "street": "Woodland Court",
+          "town": "Bristol",
+          "district": "City Of Bristol"
+        },
+        {
+          "date": "2026-09-21",
+          "price": 175000,
+          "type": "Flat/maisonette",
+          "postcode": "BS14 9JU",
+          "street": "Gilda Close",
+          "town": "Bristol",
+          "district": "City Of Bristol"
+        },
+        {
+          "date": "2026-09-21",
+          "price": 445000,
+          "type": "Terraced",
+          "postcode": "BS5 6UF",
+          "street": "Heyford Avenue",
+          "town": "Bristol",
+          "district": "City Of Bristol"
+        },
+        {
+          "date": "2026-09-21",
+          "price": 220000,
+          "type": "Flat/maisonette",
+          "postcode": "BS13 8BY",
+          "street": "Highridge Green",
+          "town": "Bristol",
+          "district": "City Of Bristol"
         }
       ]
     }

@@ -57,3 +57,35 @@ a{color:inherit;text-decoration:none}button,input{font:inherit}img{max-width:100
  .article-layout{padding:25px 0 70px}.article-layout h1{font-size:38px}.article-deck{font-size:18px}.article-image{height:230px}
 }
 @media(max-width:380px){.market-grid{grid-template-columns:1fr}.main-nav{gap:11px}.brand-wordmark{font-size:28px}}
+
+/* Evidence-led, interactive market dashboard */
+.dashboard-stack{margin:52px 0 25px}.dashboard-snapshot{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#183a50;color:white;margin-bottom:25px}
+.dashboard-snapshot>div{padding:23px 20px;border-right:1px solid #547185;display:flex;flex-direction:column;min-width:0}
+.dashboard-snapshot>div:last-child{border:0}.snapshot-label{font-size:10px;letter-spacing:.09em;color:#b4cdda;font-weight:700}
+.dashboard-snapshot strong{font:700 clamp(22px,2.7vw,34px)/1.2 Georgia,serif;letter-spacing:-.025em;margin:11px 0 5px;white-space:nowrap}
+.dashboard-snapshot strong.up{color:#80d4b6}.dashboard-snapshot strong.down{color:#f6b4a7}.dashboard-snapshot strong.neutral{color:#fff}
+.dashboard-snapshot small{font-size:11px;color:#c6d5dc;line-height:1.5}
+.dashboard-panel{background:#fff;border:1px solid #e0e6e4;padding:28px 31px;min-width:0;box-shadow:0 10px 32px #193a4a07}
+.dashboard-panel-head{display:flex;justify-content:space-between;gap:18px;align-items:start;margin-bottom:25px}
+.dashboard-section-index{font-size:10px;font-weight:700;letter-spacing:.15em;color:#2b7196}
+.dashboard-panel h2,.listings-explorer h2{font:700 clamp(23px,2.5vw,32px)/1.2 "Libre Baskerville",Georgia,serif;letter-spacing:-.045em;margin:10px 0}
+.dashboard-panel-head p,.listings-explorer p{font-size:13px;line-height:1.75;color:#74818a;margin:6px 0 0;max-width:590px}
+.chart-controls{display:flex;border:1px solid #d9e2e4;padding:3px;gap:1px;align-self:start;flex-shrink:0}
+.chart-controls button{font-size:12px;color:#516875;font-weight:700;padding:9px 12px;background:transparent;border:0;cursor:pointer}
+.chart-controls button.active{background:#1e5576;color:#fff}
+.chart-toolbar{display:flex;justify-content:space-between;gap:10px;align-items:center;border-top:1px solid #e7eae9;padding-top:19px}
+.chart-toolbar strong{font-size:13px}.chart-controls.range button{font-size:10px;padding:7px 10px}
+.trend-frame{width:100%;padding-top:14px}.trend-svg{display:block;width:100%;height:auto;overflow:visible}
+.chart-summary{display:flex;gap:20px;flex-wrap:wrap;padding:16px 0;border-top:1px solid #e5e9e9}.chart-summary span{font-size:10px;color:#87949a;letter-spacing:.07em}.chart-summary b{color:#283f4d;font-size:12px;margin-left:4px}
+.dashboard-caveat{font-size:11px;line-height:1.8;color:#7b878b;margin:13px 0 0}
+.dashboard-two{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.type-bars{padding-top:5px}.type-bar-row{margin-bottom:20px}.type-bar-info{display:flex;justify-content:space-between;gap:12px;font-size:13px;margin-bottom:8px}.type-bar-info strong{font-weight:700}
+.type-track{height:9px;background:#e7eeef;overflow:hidden}.type-track span{height:100%;display:block;background:#26799f}.type-bar-row small{display:block;font-size:11px;color:#8b979c;margin-top:5px}
+.dashboard-panel .data-table{min-width:0}.dashboard-panel .data-table td,.dashboard-panel .data-table th{padding:13px 10px}.dashboard-panel .table-scroll{border:0}
+.listings-explorer{margin:31px 0 60px;background:#eff4f3;border:1px solid #d8e3e2;display:flex;justify-content:space-between;align-items:center;gap:35px;padding:34px}
+.listings-explorer h2{font-size:27px}.listings-explorer p{max-width:700px}.listings-explorer .primary-link{flex-shrink:0;white-space:nowrap}
+@media(max-width:1000px){.dashboard-snapshot{grid-template-columns:repeat(2,1fr)}.dashboard-snapshot>div:nth-child(2){border-right:0}.dashboard-snapshot>div:nth-child(-n+2){border-bottom:1px solid #547185}.dashboard-two{grid-template-columns:1fr}.listings-explorer{align-items:start;flex-direction:column}}
+@media(max-width:650px){.dashboard-stack{margin-top:32px}.dashboard-snapshot{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-snapshot>div{padding:18px 12px}.dashboard-snapshot strong{font-size:clamp(18px,5.2vw,25px);white-space:normal}.snapshot-label{font-size:9px}.dashboard-snapshot small{font-size:10px}
+.dashboard-panel{padding:20px 15px}.dashboard-panel-head{display:block}.chart-controls{margin-top:18px;width:max-content;max-width:100%}.chart-toolbar{align-items:start;flex-direction:column;gap:8px}.chart-controls.range{margin-top:0}
+.chart-summary{gap:8px 13px}.trend-frame{overflow-x:auto}.trend-svg{min-width:410px}.listings-explorer{padding:22px;margin-top:20px}.listings-explorer .primary-link{width:100%;white-space:normal}
+}

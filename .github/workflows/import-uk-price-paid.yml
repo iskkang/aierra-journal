@@ -49,5 +49,24 @@ jobs:
           git add data/market-snapshot.json
           if ! git diff --cached --quiet; then
             git commit -m "Update verified HM Land Registry city statistics"
-            git push
+            # Other site commits may arrive while the CSV job is running.
+            # Replay only the generated data commit on the latest main.
+            # Never force-push or overwrite unrelated site changes.
+            for attempt in 1 2 3 4 5; do
+              git fetch origin main
+              if git rebase origin/main; then
+                if git push origin HEAD:main; then
+                  echo "Published verified market data on attempt $attempt"
+                  exit 0
+                fi
+              else
+                git rebase --abort || true
+                echo "Data file conflict with upstream main; refusing to overwrite it."
+                exit 1
+              fi
+              echo "Concurrent push detected; retrying ($attempt/5)"
+              sleep $((attempt * 3))
+            done
+            echo "Could not publish after five safe retries."
+            exit 1
           fi

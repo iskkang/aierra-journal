@@ -219,3 +219,10 @@ a{color:inherit;text-decoration:none}button,input{font:inherit}img{max-width:100
 .free-directory-fallback a{background:#f9faf8;color:#15394f;font-size:12px;font-weight:700;padding:12px 15px;display:block}
 @media(max-width:950px){.free-listings-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.free-directory-fallback{flex-direction:column}.free-directory-fallback>div:last-child{min-width:0}}
 @media(max-width:470px){.free-listings-controls{grid-template-columns:1fr}.free-source-intro{padding:17px}.free-directory-fallback{padding:21px}}
+
+.area-stats-panel .dashboard-caveat a{font-weight:700;color:#1a678d}
+.area-stat-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.area-stat-tiles>div{background:#f0f5f3;padding:20px;border:1px solid #e0e8e5;display:flex;flex-direction:column;gap:9px}
+.area-stat-tiles span{font-size:10px;letter-spacing:.08em;font-weight:700;color:#5a7580}
+.area-stat-tiles strong{font:700 clamp(19px,2.3vw,31px) Georgia,serif;color:#193c53}
+@media(max-width:690px){.area-stat-tiles{grid-template-columns:1fr}.area-stat-tiles>div{padding:16px}}

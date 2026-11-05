@@ -1,0 +1,6 @@
+import Link from "next/link";
+
+export function SiteHeader(){
+ return <><div className="publication-bar"><div className="shell"><span>THE UK EDITION</span><span>INDEPENDENT PROPERTY DATA &amp; PERSPECTIVES</span></div></div><header className="site-header shell"><Link href="/" className="brand" aria-label="Aierra’s Journal home"><span className="brand-wordmark">Aierra’s <span>Journal</span><i aria-hidden="true"/></span><span className="brand-tagline">GLOBAL PROPERTY INTELLIGENCE</span></Link><nav className="main-nav" aria-label="Main navigation"><Link href="/markets">Markets</Link><Link href="/markets">Property data</Link><Link href="/#journal">Journal</Link><Link href="/#about">About</Link></nav></header></>
+}
+export function SiteFooter(){return <footer className="site-footer"><div className="shell footer-inner"><div><Link href="/" className="footer-brand">Aierra’s Journal</Link><p>Independent perspectives on property markets, grounded in public data.</p></div><div><span>THE UK EDITION</span><p>© 2026 Aierra’s Journal · <a href="https://www.gov.uk/government/statistical-data-sets/price-paid-data-downloads" target="_blank" rel="noreferrer">Data: HM Land Registry</a></p></div></div></footer>}

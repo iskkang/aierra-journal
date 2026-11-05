@@ -19,7 +19,6 @@ export async function GET(req:NextRequest){
  if(beds&&!/^[1-5]$/.test(beds))return NextResponse.json({status:"invalid",message:"Invalid bedrooms filter"},{status:400});
  const url=new URL("https://trellistate.com/api/v1/listings");
  url.searchParams.set("city",city);
- url.searchParams.set("country","GB");
  url.searchParams.set("listing_type","sale");
  url.searchParams.set("status","active");
  url.searchParams.set("sort","newest");
@@ -38,7 +37,7 @@ export async function GET(req:NextRequest){
    const currency=str(x.currency).toUpperCase();
    const listingType=str(x.listing_type);
    const status=str(x.status);
-   return sourceCity===city.toLowerCase()&&["GB","GBR","UNITED KINGDOM","UK"].includes(country)&&currency==="GBP"&&listingType==="sale"&&status==="active";
+   return sourceCity===city.toLowerCase()&&(country===""||["GB","GBR","UNITED KINGDOM","UK"].includes(country))&&currency==="GBP"&&listingType==="sale"&&status==="active";
   });
   const properties=filtered.map(x=>{
    const link=safeListingLink(str(x.url));
@@ -49,6 +48,6 @@ export async function GET(req:NextRequest){
     listingUrl:link,updatedAt:str(x.updated_at),source:"Trellistate"
    };
   }).filter(x=>x.id&&x.listingUrl&&x.askingPrice!==null&&x.askingPrice>0).slice(0,30);
-  return NextResponse.json({status:"ok",provider:"Trellistate",properties,returned:properties.length,hasMore:Boolean(body.next_cursor),scope:"User-submitted open listings. Availability and accuracy are supplied by individual posters; not the whole UK market.",retrievedAt:new Date().toISOString()},{headers:{"Cache-Control":"public, s-maxage=600, stale-while-revalidate=120"}});
+  return NextResponse.json({status:properties.length?"ok":"empty",provider:"Trellistate",properties,returned:properties.length,hasMore:Boolean(body.next_cursor),message:properties.length?"":"No qualifying current UK listings were returned from Trellistate. Use the direct market search links below.",scope:"User-submitted open listings. Availability and accuracy are supplied by individual posters; not the whole UK market.",retrievedAt:new Date().toISOString()},{headers:{"Cache-Control":"public, s-maxage=600, stale-while-revalidate=120"}});
  }catch{return NextResponse.json({status:"unavailable",message:"The free listings directory did not respond.",properties:[]},{status:502})}
 }

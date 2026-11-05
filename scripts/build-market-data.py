@@ -33,6 +33,8 @@ def main():
  quarterly=collections.defaultdict(lambda:collections.defaultdict(list))
  kinds=collections.defaultdict(lambda:collections.defaultdict(list))
  all_prices=collections.defaultdict(list)
+ districts=collections.defaultdict(lambda:collections.defaultdict(list))
+ recent=collections.defaultdict(list)
  seen=set()
  date_min=date_max=None
  rows=0
@@ -58,6 +60,8 @@ def main():
     quarterly[city][quarter].append(amount)
     kinds[city][kind.upper()].append(amount)
     all_prices[city].append(amount)
+    districts[city][district.upper().strip()].append(amount)
+    recent[city].append((day.isoformat(),identifier,amount,kind.upper(),postcode,street,town,district))
     date_min=min(date_min,day) if date_min else day
     date_max=max(date_max,day) if date_max else day
     file_rows+=1
@@ -81,7 +85,9 @@ def main():
    **summarise(all_prices[city]),
    "byYear":[{"year":y,**summarise(v)} for y,v in sorted(years.items())],
    "byQuarter":[{"quarter":q,**summarise(v)} for q,v in sorted(quarterly[city].items())],
-   "byType":[{"type":TYPES[k],**summarise(v)} for k,v in sorted(kinds[city].items())]
+   "byType":[{"type":TYPES[k],**summarise(v)} for k,v in sorted(kinds[city].items())],
+   "byDistrict":[{"district":d.title(),**summarise(v)} for d,v in sorted(districts[city].items()) if len(v)>=30],
+   "recentSales":[{"date":d,"price":price,"type":TYPES[kind],"postcode":pc,"street":street.title(),"town":town.title(),"district":district.title()} for d,uid,price,kind,pc,street,town,district in sorted(recent[city],reverse=True)[:18]]
   }
  output=pathlib.Path(args.output)
  output.parent.mkdir(parents=True,exist_ok=True)

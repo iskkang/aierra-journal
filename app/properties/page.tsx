@@ -1,11 +1,11 @@
 import Link from "next/link";
 import {SiteHeader,SiteFooter} from "../../components/site-chrome";
-import {PropertySearchClient} from "../../components/property-search-client";
-export const metadata={title:"Live Properties & Saved Searches | Aierra’s Journal",description:"Search property opportunities in UK postcode districts with saved budget and location filters, and visit original listing providers for all homes currently for sale."};
+import {FreeListingsExplorer} from "../../components/free-listings-explorer";
+export const metadata={title:"Free UK Property Listings | Aierra’s Journal",description:"Search open UK property listings free by city, asking price and bedrooms, save search criteria and follow links to original publishers."};
 export default function PropertiesPage(){return <div className="site-wrap"><SiteHeader/><main className="shell market-page properties-page">
-<div className="market-top"><Link href="/watchlist" className="market-back">← Your watchlist</Link><span>PROPERTY SEARCH / UNITED KINGDOM</span></div>
-<div className="market-eyebrow">ACTIVE LISTINGS / YOUR CRITERIA</div><h1>Discover properties for sale.</h1>
-<p className="market-intro">Build a shortlist around your location, budget and property preferences. See licensed investment-sourcing results when the provider connection is active, or browse all live advertisements at the original property portal.</p>
-<PropertySearchClient/>
-<section className="methodology"><span className="dashboard-section-index">ABOUT LISTINGS</span><h2>Asking price is not transaction value.</h2><p>Current advertisements and HM Land Registry completed sales come from different sources. A price cut does not establish a property’s fair value. Compare condition, size, tenure and location before evaluating an opportunity. This service does not reproduce portal photographs or imply that a limited sourcing feed includes all homes on the market.</p></section>
+<div className="market-top"><Link href="/watchlist" className="market-back">← Your watchlist</Link><span>PROPERTY SEARCH / FREE OPEN DATA</span></div>
+<div className="market-eyebrow">ACTIVE ADVERTISEMENTS / ORIGINAL SOURCES</div><h1>Find properties for sale.</h1>
+<p className="market-intro">Search available open listings, save location and budget criteria, and open the publisher’s original advertisement. We distinguish current asking prices from recorded sale transactions and show no fabricated property data.</p>
+<FreeListingsExplorer/>
+<section className="methodology"><span className="dashboard-section-index">SOURCE, COVERAGE & RIGHTS</span><h2>What we can publish for free.</h2><p>The current open feed is Trellistate, whose public read API permits attributed redisplay of listing details. Coverage depends on what property owners and agents choose to submit. It is not a national inventory and availability is not independently verified. Listing images are intentionally not copied. Comprehensive feeds and licensed imagery will require a direct data-sharing arrangement with UK agents or portals.</p><p>The original listings are maintained by their publishers. Asking prices are not verified valuations and are not the same as completed prices in HM Land Registry data.</p></section>
 </main><SiteFooter/></div>}
